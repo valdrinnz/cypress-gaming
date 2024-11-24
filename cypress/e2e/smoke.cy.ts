@@ -1,6 +1,6 @@
 import {GameNames} from '../enums/GameNames';
 import {GamePaths} from '../enums/GamePaths';
-import {Home} from './pages/Home';
+import {Home} from '../pages/Home';
 
 const homePage = new Home();
 
@@ -25,5 +25,6 @@ describe('In the Arkadium home page', () => {
   it('Should verify search component for given categories', () => {
     homePage.clickSearchButton();
     homePage.searchForGameCategory('All');
+    homePage.verifyCategoryInSearchResults();
   });
 });

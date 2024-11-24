@@ -11,6 +11,18 @@ export class Home {
   }
 
   public verifyCategoryInSearchResults(): void {
+    const games = [
+      {
+        name: 'All',
+        path: 'free-online-games',
+      },
+    ];
+  
+    cy.get('#rightSideMenu').within(() =>{
+        games.forEach((game) => {
+            cy.get(`a[href="/${game.path}/"]`).should('contain.text', game.name);
+          });
+    })
 
   }
 }
