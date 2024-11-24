@@ -11,7 +11,7 @@ export default defineConfig({
     testIsolation: true,
     viewportWidth: 1920,
     viewportHeight: 1080,
-    supportFile: false,
+    // supportFile: './cypress/support/e2e',
     specPattern: [
       '**/e2e/**/*.cy.ts',
     ]
