@@ -11,9 +11,7 @@ export default defineConfig({
     testIsolation: true,
     viewportWidth: 1920,
     viewportHeight: 1080,
-    specPattern: [
-      '**/e2e/**/*.cy.ts',
-    ]
+    specPattern: ['**/e2e/**/*.cy.ts']
   },
 
   reporter: 'mochawesome',
