@@ -5,7 +5,7 @@ export default defineConfig({
   e2e: {
     baseUrl: 'https://www.arkadium.com/',
     defaultCommandTimeout: 30000,
-    pageLoadTimeout: 30000,
+    pageLoadTimeout: 60000,
     requestTimeout: 30000,
     responseTimeout: 30000,
     testIsolation: true,
