@@ -1,9 +1,7 @@
-Cypress.on('uncaught:exception', (err, runnable) => {
-  // returning false here prevents Cypress from
-  // failing the test
-  if (err.message.includes('Script error.')) {
-    return false
+Cypress.on('uncaught:exception', (error: Error) => {
+  if (error.message.includes('Script error.')) {
+    console.warn('Script error encountered:', error);
   }
 
-  return false
-})
+  return false;
+});
