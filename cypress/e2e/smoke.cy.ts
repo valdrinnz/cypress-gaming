@@ -30,7 +30,7 @@ describe('In the Arkadium home page', () => {
     homePage.verifyCategoryInSearchResults();
   });
 
-  it.only('Should verify the Gem prices shown at the shop are correct.', () => {
+  it('Should verify the Gem prices shown at the shop are correct.', () => {
     homePage.login(email, password);
     homePage.clickShopButton();
     Shop.validateGemPrices();
