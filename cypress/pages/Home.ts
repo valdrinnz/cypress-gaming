@@ -23,7 +23,7 @@ export class Home {
     });
   }
 
-  public clickShopButton(): void{
+  public clickShopButton(): void {
     cy.get(this.shopButton).click();
   }
 
@@ -46,15 +46,15 @@ export class Home {
     cy.get('button').contains('Sign in').click();
   }
 
-  private enterEmailInLoginForm(email: string): void{
-    cy.get('#email').type(email)
+  private enterEmailInLoginForm(email: string): void {
+    cy.get('#email').type(email);
   }
 
-  private enterPasswordInLoginForm(password: string): void{
-    cy.get('#password').type(password)
+  private enterPasswordInLoginForm(password: string): void {
+    cy.get('#password').type(password);
   }
 
-  private submitCredentials(): void{
+  private submitCredentials(): void {
     cy.get('button').contains('Submit').click();
   }
 }
