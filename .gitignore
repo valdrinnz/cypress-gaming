@@ -1,3 +1,5 @@
 /node_modules
 /cypress/e2e/2-advanced-examples
 cypress.env.json
+results
+screenshots
