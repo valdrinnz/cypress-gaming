@@ -16,7 +16,7 @@ jobs:
         uses: cypress-io/github-action@v4
 
       #Artifacts
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         name: Upload screenshots in case of fail
         if: failure()
         with:
@@ -25,12 +25,12 @@ jobs:
       
       - name: Upload MochaAwesome reports
         if: always()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: MochaAwesome Reports
           path: ./cypress/results
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         name: Upload videos in case of failure
         if: failure()
         with:
