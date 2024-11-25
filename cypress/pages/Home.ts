@@ -1,3 +1,7 @@
+import {Categories} from '../classes/Categories';
+
+const categories = new Categories();
+
 export class Home {
   private readonly searchButton = 'button[data-element-description="nav-search-button"]';
   private readonly searchInput = 'input[data-element-description="search-games"]';
@@ -6,23 +10,23 @@ export class Home {
     cy.get(this.searchButton).click();
   }
 
-  public searchForGameCategory(categoryName: string): void {
+  public verifyCategoryInSearchResults(): void {
+    const games = categories.getGames();
+
+    cy.get('#rightSideMenu').within(() => {
+      games.forEach((game) => {
+        this.searchForGameCategory(game.name);
+        cy.get(`a[href="/${game.path}/"]`).should('contain.text', game.name);
+        this.clearSearchCategoryInput();
+      });
+    });
+  }
+
+  private searchForGameCategory(categoryName: string): void {
     cy.get(this.searchInput).type(categoryName);
   }
 
-  public verifyCategoryInSearchResults(): void {
-    const games = [
-      {
-        name: 'All',
-        path: 'free-online-games',
-      },
-    ];
-  
-    cy.get('#rightSideMenu').within(() =>{
-        games.forEach((game) => {
-            cy.get(`a[href="/${game.path}/"]`).should('contain.text', game.name);
-          });
-    })
-
+  private clearSearchCategoryInput(): void {
+    cy.get(this.searchInput).clear();
   }
 }

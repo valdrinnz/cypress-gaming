@@ -14,7 +14,7 @@ describe('In the Arkadium home page', () => {
     path: GamePaths[key]
   }));
 
-  it.skip('Should verify the list of best games', () => {
+  it('Should verify the list of best games', () => {
     cy.clickBestGames();
 
     bestGames.forEach((game) => {
@@ -24,7 +24,6 @@ describe('In the Arkadium home page', () => {
 
   it('Should verify search component for given categories', () => {
     homePage.clickSearchButton();
-    homePage.searchForGameCategory('All');
     homePage.verifyCategoryInSearchResults();
   });
 });
